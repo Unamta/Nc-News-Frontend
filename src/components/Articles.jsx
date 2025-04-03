@@ -2,6 +2,7 @@ import { useState } from "react";
 import { fetchAllArticles } from "./api.js";
 import { useEffect } from "react";
 import "./Articles.css";
+import { Link } from "react-router";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -29,10 +30,10 @@ function Articles() {
           return (
             <li key={article.article_id}>
               <div className="article-box">
-                <a href={"localhost:5173/articles/" + article.article_id}>
+                <Link to={"/article/" + article.article_id}>
                   <h3>{article.title}</h3>
                   <h3>{"posted by: " + article.author}</h3>
-                </a>
+                </Link>
               </div>
             </li>
           );

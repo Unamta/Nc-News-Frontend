@@ -7,3 +7,11 @@ export function fetchAllArticles() {
       return response.data;
     });
 }
+
+export function fetchArticleById(article_id) {
+  return axios
+    .get(`https://nc-news-905s.onrender.com/api/articles/${article_id}`)
+    .then((response) => {
+      return response.data;
+    });
+}
